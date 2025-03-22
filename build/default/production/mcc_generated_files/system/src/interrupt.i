@@ -13703,7 +13703,7 @@ void CLOCK_Initialize(void);
 
 
 # 1 "mcc_generated_files/system/src/../../system/../system/pins.h" 1
-# 154 "mcc_generated_files/system/src/../../system/../system/pins.h"
+# 173 "mcc_generated_files/system/src/../../system/../system/pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13721,11 +13721,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void IO_RC5_ISR(void);
-# 180 "mcc_generated_files/system/src/../../system/../system/pins.h"
+# 199 "mcc_generated_files/system/src/../../system/../system/pins.h"
 void IO_RC5_SetInterruptHandler(void (* InterruptHandler)(void));
-# 191 "mcc_generated_files/system/src/../../system/../system/pins.h"
+# 210 "mcc_generated_files/system/src/../../system/../system/pins.h"
 extern void (*IO_RC5_InterruptHandler)(void);
-# 202 "mcc_generated_files/system/src/../../system/../system/pins.h"
+# 221 "mcc_generated_files/system/src/../../system/../system/pins.h"
 void IO_RC5_DefaultInterruptHandler(void);
 # 44 "mcc_generated_files/system/src/../../system/system.h" 2
 

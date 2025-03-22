@@ -13673,7 +13673,7 @@ extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 29 "D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\\pic\\include\\xc.h" 2 3
 # 38 "mcc_generated_files/system/src/../pins.h" 2
-# 154 "mcc_generated_files/system/src/../pins.h"
+# 173 "mcc_generated_files/system/src/../pins.h"
 void PIN_MANAGER_Initialize (void);
 
 
@@ -13691,11 +13691,11 @@ void PIN_MANAGER_IOC(void);
 
 
 void IO_RC5_ISR(void);
-# 180 "mcc_generated_files/system/src/../pins.h"
+# 199 "mcc_generated_files/system/src/../pins.h"
 void IO_RC5_SetInterruptHandler(void (* InterruptHandler)(void));
-# 191 "mcc_generated_files/system/src/../pins.h"
+# 210 "mcc_generated_files/system/src/../pins.h"
 extern void (*IO_RC5_InterruptHandler)(void);
-# 202 "mcc_generated_files/system/src/../pins.h"
+# 221 "mcc_generated_files/system/src/../pins.h"
 void IO_RC5_DefaultInterruptHandler(void);
 # 35 "mcc_generated_files/system/src/pins.c" 2
 
@@ -13720,7 +13720,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     ANSELA = 0x37;
-    ANSELC = 0x10;
+    ANSELC = 0x0;
 
 
 

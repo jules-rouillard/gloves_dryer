@@ -50,8 +50,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/system/../timer/tmr2.h: 349: void Timer2_OverflowCallbackRegister(void (* InterruptHandler)(void));
 [v _Timer2_OverflowCallbackRegister `(v ~T0 @X0 0 ef1`*F8136 ]
 [v F8058 `(v ~T0 @X0 0 tf ]
-"180 ./mcc_generated_files/system/../system/pins.h
-[; ;./mcc_generated_files/system/../system/pins.h: 180: void IO_RC5_SetInterruptHandler(void (* InterruptHandler)(void));
+"199 ./mcc_generated_files/system/../system/pins.h
+[; ;./mcc_generated_files/system/../system/pins.h: 199: void IO_RC5_SetInterruptHandler(void (* InterruptHandler)(void));
 [v _IO_RC5_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F8058 ]
 "419 D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\proc\pic16f18126.h
 [; ;D:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC16F1xxxx_DFP/1.15.191/xc8\pic\include\proc\pic16f18126.h: 419:     struct {
@@ -1610,7 +1610,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1210 ]
 [e $U 1211  ]
 [e :U 1212 ]
-"139
-[; ;main.c: 139: }
+"140
+[; ;main.c: 140: }
 [e :UE 1206 ]
 }

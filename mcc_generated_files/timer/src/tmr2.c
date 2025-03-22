@@ -11,7 +11,7 @@
  */
 
 /*
-© [2024] Microchip Technology Inc. and its subsidiaries.
+© [2025] Microchip Technology Inc. and its subsidiaries.
 
     Subject to your compliance with these terms, you may use Microchip 
     software and any derivatives exclusively with Microchip products. 
@@ -127,7 +127,7 @@ void Timer2_ISR(void)
     // clear the TMR2 interrupt flag
      PIR2bits.TMR2IF = 0;
      
-    // callback function - called every 500th pass
+    // callback function - called every 1000th pass
     if (++CountCallBack >= Timer2_INTERRUPT_TICKER_FACTOR)
     {
         // ticker function call

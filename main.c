@@ -106,9 +106,11 @@ void myTimer2ISR(void){
 void get_ref_rh_and_start_timer(void){
     sensor_read();
     RH_ref = RH;
-    IO_RC3_SetHigh();
     Timer2_Start();
 }
+
+
+
 
 int main(void)
 {
@@ -131,9 +133,11 @@ int main(void)
 
     // Disable the Peripheral Interrupts 
     //INTERRUPT_PeripheralInterruptDisable(); 
-    IO_RC3_SetLow();
+    // IO_RC3_GetValue()  
+    // IO_RC4_GetValue()  
     while(1){
 
     }
     
+
 }

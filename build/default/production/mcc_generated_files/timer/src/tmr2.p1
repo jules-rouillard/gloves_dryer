@@ -1564,8 +1564,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/timer/src/tmr2.c: 128:      PIR2bits.TMR2IF = 0;
 [e = . . _PIR2bits 0 2 -> -> 0 `i `uc ]
 "131
-[; ;mcc_generated_files/timer/src/tmr2.c: 131:     if (++CountCallBack >= 500)
-[e $ ! >= =+ F8156 -> -> 1 `i `Vui -> -> 500 `i `ui 1165  ]
+[; ;mcc_generated_files/timer/src/tmr2.c: 131:     if (++CountCallBack >= 1000)
+[e $ ! >= =+ F8156 -> -> 1 `i `Vui -> -> 1000 `i `ui 1165  ]
 "132
 [; ;mcc_generated_files/timer/src/tmr2.c: 132:     {
 {

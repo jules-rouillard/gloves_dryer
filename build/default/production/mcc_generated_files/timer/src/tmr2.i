@@ -14011,7 +14011,7 @@ void Timer2_ISR(void)
      PIR2bits.TMR2IF = 0;
 
 
-    if (++CountCallBack >= 500)
+    if (++CountCallBack >= 1000)
     {
 
         Timer2_OverflowCallback();
