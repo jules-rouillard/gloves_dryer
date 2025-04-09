@@ -1384,8 +1384,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _Timer2_Initialize ]
 [f ]
 "61
-[; ;mcc_generated_files/timer/src/tmr2.c: 61:     T2CLKCON = 0x3;
-[e = _T2CLKCON -> -> 3 `i `uc ]
+[; ;mcc_generated_files/timer/src/tmr2.c: 61:     T2CLKCON = 0x4;
+[e = _T2CLKCON -> -> 4 `i `uc ]
 "63
 [; ;mcc_generated_files/timer/src/tmr2.c: 63:     T2HLT = 0x20;
 [e = _T2HLT -> -> 32 `i `uc ]
@@ -1393,8 +1393,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/timer/src/tmr2.c: 65:     T2RST = 0x0;
 [e = _T2RST -> -> 0 `i `uc ]
 "67
-[; ;mcc_generated_files/timer/src/tmr2.c: 67:     T2PR = 0xFF;
-[e = _T2PR -> -> 255 `i `uc ]
+[; ;mcc_generated_files/timer/src/tmr2.c: 67:     T2PR = 0x0;
+[e = _T2PR -> -> 0 `i `uc ]
 "69
 [; ;mcc_generated_files/timer/src/tmr2.c: 69:     T2TMR = 0x0;
 [e = _T2TMR -> -> 0 `i `uc ]
@@ -1564,8 +1564,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/timer/src/tmr2.c: 128:      PIR2bits.TMR2IF = 0;
 [e = . . _PIR2bits 0 2 -> -> 0 `i `uc ]
 "131
-[; ;mcc_generated_files/timer/src/tmr2.c: 131:     if (++CountCallBack >= 1000)
-[e $ ! >= =+ F8156 -> -> 1 `i `Vui -> -> 1000 `i `ui 1165  ]
+[; ;mcc_generated_files/timer/src/tmr2.c: 131:     if (++CountCallBack >= 9082)
+[e $ ! >= =+ F8156 -> -> 1 `i `Vui -> -> 9082 `i `ui 1165  ]
 "132
 [; ;mcc_generated_files/timer/src/tmr2.c: 132:     {
 {

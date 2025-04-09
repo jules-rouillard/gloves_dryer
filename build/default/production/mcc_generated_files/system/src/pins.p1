@@ -1322,8 +1322,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/system/src/pins.c: 50:     TRISA = 0x37;
 [e = _TRISA -> -> 55 `i `uc ]
 "51
-[; ;mcc_generated_files/system/src/pins.c: 51:     TRISC = 0x30;
-[e = _TRISC -> -> 48 `i `uc ]
+[; ;mcc_generated_files/system/src/pins.c: 51:     TRISC = 0x38;
+[e = _TRISC -> -> 56 `i `uc ]
 "56
 [; ;mcc_generated_files/system/src/pins.c: 56:     ANSELA = 0x37;
 [e = _ANSELA -> -> 55 `i `uc ]

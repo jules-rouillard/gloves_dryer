@@ -255,7 +255,7 @@ typedef enum
 /**
   Section: Macro Declarations
 */
-#define Timer2_INTERRUPT_TICKER_FACTOR    1000
+#define Timer2_INTERRUPT_TICKER_FACTOR    9082
 
 /**
   Section: TMR2 APIs

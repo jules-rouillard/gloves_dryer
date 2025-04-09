@@ -57,14 +57,14 @@ static void Timer2_DefaultOverflowCallback(void);
 void Timer2_Initialize(void){
 
     // Set TMR2 to the options selected in the User Interface
-    // TCS HFINTOSC; 
-    T2CLKCON = 0x3;
+    // TCS LFINTOSC; 
+    T2CLKCON = 0x4;
     // TMODE Software control; TCKSYNC Synchronized; TCKPOL Rising Edge; TPSYNC Not Synchronized; 
     T2HLT = 0x20;
     // TRSEL T2INPPS pin; 
     T2RST = 0x0;
-    // PR 255; 
-    T2PR = 0xFF;
+    // PR 0; 
+    T2PR = 0x0;
     // TMR 0x0; 
     T2TMR = 0x0;
 
@@ -127,7 +127,7 @@ void Timer2_ISR(void)
     // clear the TMR2 interrupt flag
      PIR2bits.TMR2IF = 0;
      
-    // callback function - called every 1000th pass
+    // callback function - called every 9082th pass
     if (++CountCallBack >= Timer2_INTERRUPT_TICKER_FACTOR)
     {
         // ticker function call

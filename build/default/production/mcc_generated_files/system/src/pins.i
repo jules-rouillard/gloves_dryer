@@ -13714,7 +13714,7 @@ void PIN_MANAGER_Initialize(void)
 
 
     TRISA = 0x37;
-    TRISC = 0x30;
+    TRISC = 0x38;
 
 
 

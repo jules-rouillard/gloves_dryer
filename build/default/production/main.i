@@ -13988,16 +13988,12 @@ void DELAY_microseconds(uint16_t microseconds);
 # 56 "./mcc_generated_files/system/system.h"
 void SYSTEM_Initialize(void);
 # 33 "main.c" 2
-
-
-
-
-
-
+# 44 "main.c"
+unsigned char state,count_3h;
 unsigned char Check, T_byte1, T_byte2, RH_byte1, RH_byte2, Ch ;
 unsigned Temp, RH, RH_ref, Sum ;
 
-void sensor_trigger(){
+void send_start_signal(){
     do { TRISCbits.TRISC2 = 0; } while(0);
     do { LATCbits.LATC2 = 0; } while(0);
     DELAY_milliseconds(18);
@@ -14006,7 +14002,7 @@ void sensor_trigger(){
     do { TRISCbits.TRISC2 = 1; } while(0);
   }
 
-void is_trigger_detected() {
+void is_sensor_start_detected() {
     Check=0;
     DELAY_microseconds(40);
     if(PORTCbits.RC2==0){
@@ -14033,8 +14029,8 @@ char ReadData(){
 }
 
 void sensor_read(void){
-    sensor_trigger();
-    is_trigger_detected();
+    send_start_signal();
+    is_sensor_start_detected();
     if(Check == 1){
         RH_byte1 = ReadData();
         RH_byte2 = ReadData();
@@ -14049,30 +14045,76 @@ void sensor_read(void){
 }
 
 void myTimer2ISR(void){
-    LATCbits.LATC3 = ~LATCbits.LATC3;
-    sensor_read();
-    if(RH>(RH_ref+10)){
-        do { LATCbits.LATC1 = 1; } while(0);
-        do { LATCbits.LATC0 = 1; } while(0);
+
+    if(state == 2){
+
+        sensor_read();
+
+        if(RH>(RH_ref+5)){
+            RC0 = 1;
+            RC1 = 1;
+        }
+        else{
+            RC0 = 0;
+            RC1 = 0;
+        }
+    }else{
+        if (++count_3h >= 18){
+
+            count_3h=0;
+            RC0 = 0;
+            RC1 = 0;
+            Timer2_Stop();
+        }
+    }
+
+}
+
+void button_press(void){
+    Timer2_Stop();
+    if(RC3 == 0 && RC4 == 0){
+
+        state = 1;
+        do { LATCbits.LATC0 = ~LATCbits.LATC0; } while(0);
+        do { LATCbits.LATC1 = ~LATCbits.LATC1; } while(0);
+        }
+    else if(RC3 == 0 && RC4 == 1){
+
+
+        state = 2;
+        sensor_read();
+        RH_ref = RH;
+
+        RC0 = 1;
+        RC1 = 1;
+        Timer2_Start();
+    }
+    else if(RC3 == 1 && RC4 == 0){
+
+        state = 3;
+        RC0 = 0;
+        RC1 = 0;
     }
     else{
-        do { LATCbits.LATC1 = 0; } while(0);
-        do { LATCbits.LATC0 = 0; } while(0);
+
+        state = 4;
+        count_3h=0;
+        RC0 = 1;
+        RC1 = 1;
+        Timer2_Start();
     }
 }
 
-void get_ref_rh_and_start_timer(void){
-    sensor_read();
-    RH_ref = RH;
-    do { LATCbits.LATC3 = 1; } while(0);
-    Timer2_Start();
-}
+
 
 int main(void)
 {
     SYSTEM_Initialize();
     Timer2_OverflowCallbackRegister(myTimer2ISR);
-    IO_RC5_SetInterruptHandler(get_ref_rh_and_start_timer);
+    IO_RC5_SetInterruptHandler(button_press);
+    RC0 = 0;
+    RC1 = 0;
+    count_3h=0;
 
 
 
@@ -14089,7 +14131,7 @@ int main(void)
 
 
 
-    do { LATCbits.LATC3 = 0; } while(0);
+
     while(1){
 
     }

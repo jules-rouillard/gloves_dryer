@@ -13941,13 +13941,13 @@ void Timer2_Initialize(void){
 
 
 
-    T2CLKCON = 0x3;
+    T2CLKCON = 0x4;
 
     T2HLT = 0x20;
 
     T2RST = 0x0;
 
-    T2PR = 0xFF;
+    T2PR = 0x0;
 
     T2TMR = 0x0;
 
@@ -14011,7 +14011,7 @@ void Timer2_ISR(void)
      PIR2bits.TMR2IF = 0;
 
 
-    if (++CountCallBack >= 1000)
+    if (++CountCallBack >= 9082)
     {
 
         Timer2_OverflowCallback();
